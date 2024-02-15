@@ -1,0 +1,20 @@
+<div class="container">
+    <ng-container *ngFor="let square of board.slice(0,3); index as i" >
+    <app-square [state]="square" (squareClicked)="onSquareClicked($event, i)"></app-square>
+    </ng-container>
+</div>
+
+<div class="container">
+    <ng-container *ngFor="let square of board.slice(3,6); index as i" >
+    <app-square [state]="square" (squareClicked)="onSquareClicked($event, i + 3)"></app-square>
+    </ng-container>
+</div>
+
+<div class="container">
+    <ng-container *ngFor="let square of board.slice(6,9); index as i" >
+    <app-square [state]="square" (squareClicked)="onSquareClicked($event, i + 6)"></app-square>
+    </ng-container>
+</div>
+
+<p *ngIf="!winner">{{isPlayerOneTurn ? 'X' : 'O'}} turn</p>
+<p *ngIf="winner">Player {{winner}} wins</p>
