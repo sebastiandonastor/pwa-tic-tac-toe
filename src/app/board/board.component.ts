@@ -27,7 +27,6 @@ export class BoardComponent implements OnInit {
 
   onSquareClicked(state: SquareState, line : number) {
     this.assignSquare(line);
-    console.log(line);
     this.calculateWinnner();
   }
 
@@ -51,10 +50,7 @@ export class BoardComponent implements OnInit {
 
     for(let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
-      if(this.board[a] && this.board[a] == this.board[b] && this.board[b] == this.board[c]) {
-        console.log(a, b, c);
-        console.log(this.board);
-  
+      if(this.board[a] && this.board[a] == this.board[b] && this.board[b] == this.board[c]) {  
         this.winner = previousPlayer;
         break;
       }
